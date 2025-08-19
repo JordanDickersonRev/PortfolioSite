@@ -19,11 +19,19 @@ namespace PortfolioSite.Client.Components.Sections
             };
         }
 
-        private void ShowDialog(ProjectDto project)
+        private Task ShowDialog(ProjectDto project)
         {
             _DialogTitle = project.Name!;
             _DialogDescription = project.Description!;
             _DialogIsShown = true;
-        } 
+            return Task.CompletedTask;
+        }
+        
+        private Task NavigateToUrl(ProjectDto project)
+        {
+            if(!string.IsNullOrEmpty(project.Url))
+                NavManager.NavigateTo(project.Url);
+            return Task.CompletedTask;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@inject IProjectAppService ProjectAppService
+@inject NavigationManager NavManager
 
 <section id="projectsSection">
     <div class="siteLayout">
@@ -17,7 +18,7 @@
                         <SiteDropDownButton ToggleButtonText="Details" Disabled="@(context.IsFinished ? false : true)"> 
                             <DropDownElements>
                                 <li class="dropdownItem" @onmousedown="() => ShowDialog(context)"><a><i class="fas fa-info-circle" /> Description</a></li>
-                                <li class="dropdownItem"><a><i class="fas fa-code-branch" /> Source Code</a></li>
+                                <li class="dropdownItem" @onmousedown="() => NavigateToUrl(context)"><a><i class="fas fa-code-branch" /> Source Code</a></li>
                             </DropDownElements>
                         </SiteDropDownButton>
                     </TemplateColumn>
