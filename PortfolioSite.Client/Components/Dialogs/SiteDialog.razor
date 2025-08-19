@@ -1,0 +1,16 @@
+﻿@if (DialogIsShown)
+{
+    <div class="dialogDiv">
+        <dialog open="true">
+            <div class="dialogHeader">
+                @DialogHeader
+            </div>
+            <div class="dialogContent">
+                @DialogContent
+            </div>
+            <div class="dialogFooter">
+                <SiteButton Text="Close" OnSiteButtonClicked="HideDialog" />
+            </div>
+        </dialog>
+    </div>
+}

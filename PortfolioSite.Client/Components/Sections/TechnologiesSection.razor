@@ -1,0 +1,38 @@
+﻿@inject ITechAppService TechAppService
+
+<section id="technologiesSection">
+    <div class="siteLayout">
+        <div class="technologiesHeader">
+            <h2>Tools</h2>
+            <text>@HeaderDescription</text>
+        </div>
+
+        <div class="technologyCards">
+            <div class="siteCard">
+                <div class="siteCardHeader">
+                    <h4><i class="fas fa-layer-group" /> Tech Stack</h4>
+                    <div class="hr"></div>
+                </div>
+                @foreach (var technology in TechStack)
+                {
+                    <div class="techStackRow">
+                        <h4>@technology.Name</h4>
+                    </div>
+                }
+            </div>
+
+            <div class="siteCard">
+                <div class="siteCardHeader">
+                    <h4><i class="fas fa-toolbox" /> Other Technologies</h4>
+                    <div class="hr"></div>
+                </div>
+                @foreach (var technology in OtherTechnologies)
+                {
+                    <div class="techStackRow">
+                        <h4>@technology.Name</h4>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

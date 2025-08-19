@@ -1,0 +1,56 @@
+﻿@inject IJSRuntime _jS
+@inject NavigationManager NavigationManager
+<div class="siteHeader">
+    <nav class="navItems">
+        <div class="navItem">
+            <NavLink class="navLink" href="@_introductionUrl" Match="NavLinkMatch.All">
+                <SiteButton Text="Jordan Dickerson" IconClass="fas fa-home"/>
+            </NavLink>
+        </div>
+        <div class="navItem">
+            <NavLink class="navLink" href="@_aboutMeUrl">
+                <SiteButton Text="About" IconClass="fas fa-user" />
+            </NavLink>
+        </div>
+        <div class="navItem">
+            <NavLink class="navLink" href="@_technologiesUrl">
+                <SiteButton Text="Tools" IconClass="fas fa-toolbox" />
+            </NavLink>
+        </div>
+        <div class="navItem">
+            <NavLink class="navLink" href="@_workExperienceUrl">
+                <SiteButton Text="Work Experience" IconClass="fas fa-address-card"/>
+            </NavLink>
+        </div>
+        <div class="navItem">
+            <NavLink class="navLink" href="@_projectsUrl">
+                <SiteButton Text="Projects" IconClass="fas fa-folder" />
+            </NavLink>
+        </div>
+    </nav>
+    <SiteDropDownButton FloatRight=true ShowCaretDownIcon="false" ToggleButtonIconClass="@_currentThemeIcon">
+        <DropDownElements>
+            <li @onmousedown="() => SetThemeAsync(_dark)" class="dropdownItem"><a><i class="fas fa-moon" /> Dark</a></li>
+            <li @onmousedown="() => SetThemeAsync(_light)" class="dropdownItem"><a><i class="fas fa-sun" /> Light</a></li>
+            <li @onmousedown="() => SetThemeAsync(_system)" class="dropdownItem"><a><i class="fas fa-desktop" /> System</a></li>
+        </DropDownElements>
+    </SiteDropDownButton>
+</div>
+<div class="siteMobileHeader">
+    <SiteDropDownButton ShowCaretDownIcon="false" ToggleButtonIconClass="fas fa-bars"> 
+        <DropDownElements>
+            <li @onmousedown="() => NavigateToUrl(_introductionUrl)" class="dropdownItem"><a><i class="fas fa-home" /> Jordan Dickerson</a></li>
+            <li @onmousedown="() => NavigateToUrl(_aboutMeUrl)" class="dropdownItem"><a><i class="fas fa-user" /> About</a></li>
+            <li @onmousedown="() => NavigateToUrl(_technologiesUrl)" class="dropdownItem"><a><i class="fas fa-toolbox" /> Tools</a></li>
+            <li @onmousedown="() => NavigateToUrl(_workExperienceUrl)" class="dropdownItem"><a><i class="fas fa-address-card" /> Work Experience</a></li>
+            <li @onmousedown="() => NavigateToUrl(_projectsUrl)" class="dropdownItem"><a><i class="fas fa-folder" /> Projects</a></li>
+        </DropDownElements>
+    </SiteDropDownButton>
+    <SiteDropDownButton FloatRight=true ShowCaretDownIcon="false" ToggleButtonIconClass="@_currentThemeIcon">
+        <DropDownElements>
+            <li @onmousedown="() => SetThemeAsync(_dark)" class="dropdownItem"><a><i class="fas fa-moon" /> Dark</a></li>
+            <li @onmousedown="() => SetThemeAsync(_light)" class="dropdownItem"><a><i class="fas fa-sun" /> Light</a></li>
+            <li @onmousedown="() => SetThemeAsync(_system)" class="dropdownItem"><a><i class="fas fa-desktop" /> System</a></li>
+        </DropDownElements>
+    </SiteDropDownButton>
+</div>

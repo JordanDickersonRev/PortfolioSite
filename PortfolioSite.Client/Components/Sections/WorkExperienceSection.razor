@@ -1,0 +1,42 @@
+﻿@inject IExperienceAppService ExperienceAppService
+
+<section id="workExperienceSection">
+    <div class="siteLayout">
+        <div class="workExperienceHeader">
+            <h2>My Professional Journey</h2>
+        </div>
+        <div class="workExperienceDiv">
+            <div class="siteCard">
+                <div class="siteCardHeader">
+                    <h4><i class="fas fa-address-card" /> Work Experience</h4>
+                    <div class="hr"></div>
+                </div>
+                @foreach (var job in WorkExperience)
+                {
+                    <div class="experienceRow">
+                        <div class="experienceInfo">
+                            <span class="duration">@FormatDate(job.StartDate) - @FormatEndDate(job)</span>
+                            <h4 class="jobDescription">@job.ShortDescription</h4>
+                            <text class="companyName">@job.CompanyName</text>
+                        </div>
+                        <div class="experienceDetails">
+                            <SiteButton Text="Details" OnSiteButtonClicked="() => ShowDialog(job)" />
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="workExperienceLogo">
+                <i class="fas fa-briefcase"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<SiteDialog @bind-DialogIsShown="_IsDialogShown">
+    <DialogHeader>
+        <h5>@_DialogTitle</h5>
+    </DialogHeader>
+    <DialogContent>
+        <p>@_DialogDescription</p>
+    </DialogContent>
+</SiteDialog>

@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Web Development",
+    "Projects": [
+      {
+        "Path": "PortfolioSite\\PortfolioSite.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      },
+      {
+        "Path": "PortfolioSite.ClientHost\\PortfolioSite.ClientHost.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

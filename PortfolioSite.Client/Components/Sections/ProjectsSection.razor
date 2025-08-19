@@ -1,0 +1,37 @@
+﻿@inject IProjectAppService ProjectAppService
+
+<section id="projectsSection">
+    <div class="siteLayout">
+        <div class="projectsHeader">
+            <h2>Projects</h2>
+        </div>
+        <div class="projectsDiv">
+            <div class="projectsLogo">
+                <i class="fas fa-desktop" />
+            </div>
+            <div class="siteCard">
+                <QuickGrid TGridItem="ProjectDto" ItemsProvider="GetProjects" ItemKey="(x => x.Id)" Pagination="Pagination">
+                    <PropertyColumn Property="@(p => p.Name)" Sortable="false" Class="projectName" />
+                    <PropertyColumn Property="@(p => p.ShortDescription)" Sortable="false" Class="projectShortDescription" Title="Short Description" />
+                    <TemplateColumn>
+                        <SiteDropDownButton ToggleButtonText="Details" Disabled="@(context.IsFinished ? false : true)"> 
+                            <DropDownElements>
+                                <li class="dropdownItem" @onmousedown="() => ShowDialog(context)"><a><i class="fas fa-info-circle" /> Description</a></li>
+                                <li class="dropdownItem"><a><i class="fas fa-code-branch" /> Source Code</a></li>
+                            </DropDownElements>
+                        </SiteDropDownButton>
+                    </TemplateColumn>
+                </QuickGrid>
+            </div>
+        </div>
+    </div>
+</section>
+
+<SiteDialog @bind-DialogIsShown="_DialogIsShown">
+    <DialogHeader>
+        <h5>@_DialogTitle</h5>
+    </DialogHeader>
+    <DialogContent>
+        <p>@_DialogDescription</p>
+    </DialogContent>
+</SiteDialog>
