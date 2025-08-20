@@ -170,11 +170,6 @@ p {
     cursor: pointer;
 }
 
-    .dropdownItem a {
-        text-decoration: none;
-        color: light-dark(var(--light-color), var(--dark-color));
-    }
-
     .dropdownItem:hover, .dropdownItem:active {
         background-color: light-dark(var(--light-dropdownItem-hover-bg), var(--dark-dropdownItem-hover-bg));
         color: var(--dark-color);
@@ -447,6 +442,7 @@ div.dialogDiv, ::backdrop {
 dialog {
     overflow-y: auto;
     width: 18em;
+    max-height: 30em;
 }
 
 div.dialogDiv dialog {
