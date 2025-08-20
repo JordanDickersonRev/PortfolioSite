@@ -31,6 +31,7 @@ namespace PortfolioSite.Client.Components.Sections
         
         private async Task<Task> OpenSourceCodeInTab(ProjectDto project)
         {
+            _DialogIsShown = false;
             if (!string.IsNullOrEmpty(project.Url))
             {
                 _Module = await JS.InvokeAsync<IJSObjectReference>("import",

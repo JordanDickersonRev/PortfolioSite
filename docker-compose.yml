@@ -1,0 +1,6 @@
+services:
+  webapp:
+    build:  
+        dockerfile: PortfolioSite/Dockerfile
+    ports:
+        - "5000:8080"

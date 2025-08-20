@@ -445,6 +445,10 @@ dialog {
     max-height: 30em;
 }
 
+dialog p {
+    text-indent: 0;
+}
+
 div.dialogDiv dialog {
     top: 0;
     bottom: 0;
