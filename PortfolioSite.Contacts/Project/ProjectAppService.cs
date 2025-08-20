@@ -12,7 +12,7 @@ namespace PortfiloSite.Contacts.Project
                     Name = $"{DateTime.UtcNow.Year} Portfolio Site", 
                     ShortDescription = "This portfolio site", 
                     Description="Welcome to my portfolio. This is a showcase of my projects and skills as a web developer. This website is a demonstration of my ability to build modern web applications using ASP.NET Core, Blazor, JavaScript, HTML and CSS.",
-                    Url = "https://github.com/JordanDickersonRev/PortfolioSite/tree/main",
+                    Url = "https://github.com/JordanDickersonRev/PortfolioSite",
                     IsFinished = true,
                 },
                 new ProjectDto()
