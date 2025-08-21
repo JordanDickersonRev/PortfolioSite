@@ -25,28 +25,45 @@
     --site-button-disabled-bg: #d0d0d0;
 }
 
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 article.content.px-4 {
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
 
 #loadingIndicator {
-    position: absolute;
     top: 50%;
-    left: 50%;
-    border: 1em solid transparent;
-    border-top: 1em solid #3498db;
+    right: 50%;
+    border: 3px solid var(--site-button-bg);
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 1s linear infinite;
+    display: inline-block;
+    position: absolute;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
+
+    #loadingIndicator::after {
+        content: '';
+        box-sizing: border-box;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-bottom-color: var(--site-button-bg);
+    }
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+} 
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -442,7 +459,6 @@ div.dialogDiv, ::backdrop {
 dialog {
     overflow-y: auto;
     width: 18em;
-    max-height: 30em;
 }
 
 dialog p {
@@ -469,15 +485,22 @@ div.dialogFooter {
 div.dialogHeader,
 div.dialogContent {
     justify-content: start;
-    padding: 1em;
+    padding: 1em 0;
 }
 
 div.dialogHeader {
     border-bottom: 2px solid;
 }
 
+div.dialogContent div {
+    max-height: 20em;
+    overflow-y: auto;
+}
+
 div.dialogFooter {
+    border-top: 2px solid;
     justify-content: end;
+    padding: 1em 0;
 }
 
 @media(width >= 375px){
