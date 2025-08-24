@@ -12,10 +12,7 @@ namespace PortfolioSite.Client.Components.Dialogs
         public RenderFragment? DialogHeader { get; set; }
         [Parameter]
         public RenderFragment? DialogContent { get; set; }
-        private Task HideDialog()
-        {
-             DialogIsShown = false;
-            return Task.CompletedTask;
-        }
+        [Parameter]
+        public RenderFragment? DialogFooter { get; set; }
     }
 }

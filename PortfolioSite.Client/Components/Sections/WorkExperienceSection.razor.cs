@@ -31,5 +31,13 @@ namespace PortfolioSite.Client.Components.Sections
             _DialogDescription = job.JobDescription;
             _IsDialogShown = true;
         }
+
+        private Task HideDialog()
+        {
+            _IsDialogShown = false;
+            _DialogTitle = "";
+            _DialogDescription = "";
+            return Task.CompletedTask;
+        }
     }
 }

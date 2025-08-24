@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace PortfolioSite.Client.Components.Buttons
+namespace PortfolioSite.Client.Components.Anchors
 {
     public partial class SiteAnchor
     {

@@ -42,7 +42,7 @@ namespace PortfolioSite.Client.Components.Buttons
         void DropDownToggleClicked()
         {
             if (DropDownItemsDisplayValue == "none")
-                DropDownItemsDisplayValue = "display";
+                DropDownItemsDisplayValue = "block";
             else
                 DropDownItemsDisplayValue = "none";
         }

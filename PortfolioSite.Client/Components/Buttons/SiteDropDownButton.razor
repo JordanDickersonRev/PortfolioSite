@@ -1,6 +1,6 @@
 ﻿
-<div class="@DropdownClassName" @onfocusout="HideDropDownItems">
-    <SiteButton SiteButtonClass="@SiteButtonClassName" OnSiteButtonClicked="DropDownToggleClicked" ShowCaretIcon="@ShowCaretDownIcon" IconClass="@ToggleButtonIconClass" Text="@ToggleButtonText" Disabled="Disabled"> </SiteButton>
+<div class="@DropdownClassName" @onfocusout="HideDropDownItems" tabindex="0">
+    <SiteButton SiteButtonClass="@SiteButtonClassName" OnSiteButtonClicked="DropDownToggleClicked" ShowCaretIcon="@ShowCaretDownIcon" IconClass="@ToggleButtonIconClass" Text="@ToggleButtonText" Disabled="Disabled"/>
     <div class="dropdownItems" style="display: @DropDownItemsDisplayValue">
         <ul>
             @DropDownElements

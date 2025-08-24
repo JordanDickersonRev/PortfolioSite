@@ -28,10 +28,15 @@ namespace PortfolioSite.Client.Components.Sections
             _DialogIsShown = true;
             return Task.CompletedTask;
         }
-        
-        private async Task<Task> OpenSourceCodeInTab(ProjectDto project)
+
+        private Task HideDialog()
         {
             _DialogIsShown = false;
+            return Task.CompletedTask;
+        }
+
+        private async Task<Task> OpenSourceCodeInTab(ProjectDto project)
+        {
             if (!string.IsNullOrEmpty(project.Url))
             {
                 _Module = await JS.InvokeAsync<IJSObjectReference>("import",
