@@ -30,9 +30,9 @@
     </nav>
     <SiteDropDownButton FloatRight=true ShowCaretDownIcon="false" ToggleButtonIconClass="@_currentThemeIcon">
         <DropDownElements>
-            <li @onmousedown="() => SetThemeAsync(_dark)" class="dropdownItem"><a><i class="fas fa-moon" tabindex="1" /> Dark</a></li>
-            <li @onmousedown="() => SetThemeAsync(_light)" class="dropdownItem"><a><i class="fas fa-sun" tabindex="2" /> Light</a></li>
-            <li @onmousedown="() => SetThemeAsync(_system)" class="dropdownItem"><a><i class="fas fa-desktop" tabindex="3" /> System</a></li>
+            <li @onmousedown="() => SetThemeAsync(_dark)" class="dropdownItem" tabindex="1"><a><i class="fas fa-moon" /> Dark</a></li>
+            <li @onmousedown="() => SetThemeAsync(_light)" class="dropdownItem" tabindex="2"><a><i class="fas fa-sun" /> Light</a></li>
+            <li @onmousedown="() => SetThemeAsync(_system)" class="dropdownItem" tabindex="3"><a><i class="fas fa-desktop" /> System</a></li>
         </DropDownElements>
     </SiteDropDownButton>
 </div>
