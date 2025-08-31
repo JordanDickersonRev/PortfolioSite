@@ -307,6 +307,10 @@ div.aboutMeHeader, div.technologiesHeader,
     color: light-dark(var(--light-bg-4), var(--dark-bg-4));
 }
 
+.aboutMeParagraph p {
+    font-size: 1.2em;
+}
+
 .technologiesHeader h2 {
     color: light-dark(var(--light-color), var(--dark-color));
 }
