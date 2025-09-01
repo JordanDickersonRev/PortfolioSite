@@ -15,7 +15,7 @@
     --dark-dropdownItem-hover-bg: #242424;
     --dark-card-background-color: #212121;
     --site-header-padding: 1em;
-    --site-button-radius: 5px;
+    --site-button-radius: 3px;
     --site-button-padding: 0.4em 0.6em;
     --site-dropdown-item-margin: 0.3em;
     --site-card-radius: 0.6em;
@@ -200,13 +200,9 @@ p {
         right: 0;
     }
 
-#introductionSection {
-    background: light-dark(var(--light-bg), var(--dark-bg-2));
-    color: var(--dark-color);
-}
 
-#projectsSection {
-    background: light-dark(var(--light-bg-2), var(--dark-bg));
+#technologiesSection {
+    background: light-dark(var(--light-bg-2), var(--dark-bg-2));
 }
 
 #introductionSection, #aboutMeSection, #technologiesSection,
@@ -296,11 +292,11 @@ div.aboutMeHeader, div.technologiesHeader,
 
 .myPicture {
     height: 23em;
-    background: light-dark(var(--dark-bg-2), var(--dark-bg));
     border-radius: var(--site-card-radius);
     content: url(images/PortfolioSiteImage2025.svg);
     padding: 1em;
-    border: 1px solid light-dark(var(--dark-bg-2), var(--dark-bg));
+    background-color: var(--dark-card-background-color);
+    border: 1px solid var(--dark-card-background-color);
 }
 
 .aboutMeHeader h2 {
@@ -400,15 +396,30 @@ div.projectsLogo {
     display: none;
 }
 
-div.techStackRow, div.experienceRow {
-    border-left: 4px solid;
-    padding: 1em;
-    margin: 1.5em 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 1em;
+.technologyCards .siteCard {
+    border: none;
+    background-color: transparent;
+    margin: 3em 0;
 }
+
+div.techStackRow {
+    border: 1px solid light-dark(var(--light-color), var(--dark-card-background-color));
+    border-radius: var(--site-button-padding);
+    padding: 1em;
+    text-align: center;
+    align-content: center;
+    margin-bottom: 1em;
+    background-color: light-dark(var(--light-card-background-color), var(--dark-card-background-color));
+    height: 6em;
+}
+
+    div.techStackRow:hover {
+        cursor: default;
+    }
+
+    div.techStackRow h4 {
+        font-weight: 700;
+    }
 
 div.techStackRow h4, div.experienceRow h4 {
     margin-bottom: 0;
@@ -423,6 +434,10 @@ div.experienceRow {
     flex-direction: column;
     height: auto;
     align-items: flex-start;
+    border-left: 4px solid;
+    margin: 1.5em 0;
+    display: flex;
+    justify-content: flex-start;
 }
 
 div.experienceRow span, div.experienceRow text {
@@ -538,6 +553,16 @@ div.dialogFooter {
     .aboutMeHeader, .aboutMeParagraph, .siteCard,
     .technologiesHeader, .workExperienceHeader, .projectsHeader {
         width: 35em;
+    }
+
+    .technologyCards .siteCard .siteCardHeader {
+        text-align: center;
+    }
+
+    .techStackRows{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1em;
     }
 
     div.experienceRow {
@@ -658,6 +683,7 @@ div.dialogFooter {
     }
 
     .aboutMeHeader, .aboutMeParagraph, .technologiesHeader,
+    .technologyCards .siteCard,
     .workExperienceDiv, .projectsDiv, .projectsDiv .siteCard,
     .workExperienceHeader, .projectsHeader {
         width: 60em;
@@ -676,11 +702,11 @@ div.dialogFooter {
     .introductionDiv {
         margin-top: 0;
         margin-right: 1em;
-        background: light-dark(var(--light-bg), var(--dark-bg-2));
+        background: light-dark(var(--light-bg), var(--dark-bg));
         padding: 1em;
         color: light-dark(var(--light-color), var(--dark-color));
         border-radius: var(--site-card-radius);
-        border: 1px solid light-dark(var(--light-bg), var(--dark-bg-2));
+        border: 1px solid light-dark(var(--light-bg), var(--dark-bg));
     }
 
     .myPictureDiv {
@@ -696,15 +722,9 @@ div.dialogFooter {
         font-size: 3rem;
     }
 
-    .technologyCards {
-        display: flex;
-        justify-content: space-between;
-        width: 60em;
+    .techStackRows {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-
-        .technologyCards .siteCard {
-            width: 29em;
-        }
 
     div.workExperienceDiv {
         display: flex;
@@ -723,6 +743,7 @@ div.dialogFooter {
 
 @media (width >= 1400px) {
     .aboutMeHeader, .aboutMeParagraph, .technologiesHeader,
+    .technologyCards .siteCard,
     .workExperienceDiv, .projectsDiv,
     .workExperienceHeader, .projectsHeader {
         width: 80em;
@@ -737,14 +758,6 @@ div.dialogFooter {
     div.projectsLogo {
         display: block;
     }
-
-    .technologyCards {
-        width: 80em;
-    }
-
-        .technologyCards .siteCard {
-            width: 39em;
-        }
 
     div.projectsLogo i {
         font-size: 10em;
