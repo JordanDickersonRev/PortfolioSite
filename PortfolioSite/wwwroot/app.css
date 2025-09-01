@@ -409,7 +409,7 @@ div.techStackRow {
     text-align: center;
     align-content: center;
     margin-bottom: 1em;
-    background-color: light-dark(var(--light-card-background-color), var(--dark-card-background-color));
+    background-color: light-dark(var(--light-bg), var(--dark-card-background-color));
     height: 6em;
 }
 
