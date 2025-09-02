@@ -403,13 +403,13 @@ div.projectsLogo {
 }
 
 div.techStackRow {
-    border: 1px solid light-dark(var(--light-color), var(--dark-card-background-color));
+    border: 1px solid light-dark(#d7d7d7, var(--dark-card-background-color));
     border-radius: var(--site-button-padding);
     padding: 1em;
     text-align: center;
     align-content: center;
     margin-bottom: 1em;
-    background-color: light-dark(var(--light-bg), var(--dark-card-background-color));
+    background-color: light-dark(#d7d7d7, var(--dark-card-background-color));
     height: 6em;
 }
 
