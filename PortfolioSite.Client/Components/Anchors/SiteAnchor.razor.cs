@@ -12,6 +12,8 @@ namespace PortfolioSite.Client.Components.Anchors
         public string Url { get; set; } = "";
         [Parameter]
         public string IconClass { get; set; } = "";
+        [Parameter]
+        public string DownloadFileName { get; set; } = "";
 
         private Task<string> GetTargetValue()
         {

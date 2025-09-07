@@ -1,1 +1,8 @@
-﻿<a class="siteButton" href="@Url" target="@GetTargetValue"><i class="@IconClass"/> @Text</a>
+﻿@if(string.IsNullOrEmpty(DownloadFileName))
+{
+    <a class="siteButton" href="@Url" target="@GetTargetValue"><i class="@IconClass" /> @Text</a>
+}
+else
+{
+    <a class="siteButton" href="@Url" target="@GetTargetValue" download="@DownloadFileName"><i class="@IconClass" /> @Text</a>
+}
