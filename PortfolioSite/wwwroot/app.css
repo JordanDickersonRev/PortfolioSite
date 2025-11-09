@@ -435,7 +435,7 @@ div.experienceRow {
     height: auto;
     align-items: flex-start;
     border-left: 4px solid;
-    margin: 1.5em 0;
+    margin: 2em 0;
     display: flex;
     justify-content: flex-start;
 }
