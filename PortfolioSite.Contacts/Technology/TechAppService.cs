@@ -12,8 +12,10 @@
                 new TechnologyDto(){Name = "Asp.Net Core", IconClass = ""},
                 new TechnologyDto(){Name = "Blazor", IconClass = ""},
                 new TechnologyDto(){Name = "TSQL", IconClass = ""},
+                new TechnologyDto(){Name = "GIT", IconClass = ""},
+                new TechnologyDto(){Name = "Jira", IconClass = ""}
             ]);
-            return Task.FromResult(result);
+            return Task.FromResult(result.OrderBy(x => x.Name).ToList());
         }
 
         public Task<List<TechnologyDto>> GetTechnologiesAsync()
@@ -28,8 +30,10 @@
                 new TechnologyDto(){Name = "Bootstrap", IconClass = ""},
                 new TechnologyDto(){Name = "React", IconClass = ""},
                 new TechnologyDto(){Name = "JQuery", IconClass = ""},
+                new TechnologyDto(){Name = "XAML", IconClass = ""},
+                new TechnologyDto(){Name = "MAUI", IconClass = ""}
             ]);
-            return Task.FromResult(result);
+            return Task.FromResult(result.OrderBy(x => x.Name).ToList());
         }
 
         public Task<string> GetHeaderDescriptionAsync()
