@@ -15,13 +15,13 @@ namespace PortfolioSite.Client.Components.Anchors
         [Parameter]
         public string DownloadFileName { get; set; } = "";
 
-        private Task<string> GetTargetValue()
+        private string GetTargetValue()
         {
             string result = "_self";
             if (OpenNewTab)
                 result = "_blank";
 
-            return Task.FromResult(result);
+            return result;
         }
     }
 }

@@ -22,34 +22,34 @@ namespace PortfolioSite.Client.Components.Buttons
         [Parameter]
         public bool Disabled { get; set; } = false;
 
-        string DropdownClassName { get; set; } = "dropdown";
-        string SiteButtonClassName { get; set; } = "siteButton";
-        string DropDownItemsDisplayValue { get; set; } = "none";
+        private string _dropdownClassName = "dropdown";
+        private string _siteButtonClassName = "siteButton";
+        private bool _showDropDownItems = false;
 
         protected override async Task OnInitializedAsync()
         {
             if (string.IsNullOrEmpty(ToggleButtonText))
             {
-                SiteButtonClassName = "siteButton2";
+                _siteButtonClassName = "siteButton2";
             }
             if(FloatRight)
             {
-                DropdownClassName = "dropdownFloatRight";
+                _dropdownClassName = "dropdownFloatRight";
             }
             await base.OnInitializedAsync();
         }
 
-        void DropDownToggleClicked()
+        private void DropDownToggleClicked()
         {
-            if (DropDownItemsDisplayValue == "none")
-                DropDownItemsDisplayValue = "block";
+            if (_showDropDownItems)
+                _showDropDownItems = false;
             else
-                DropDownItemsDisplayValue = "none";
+                _showDropDownItems = true;
         }
 
-        public void HideDropDownItems()
+        private void HideDropDownItems()
         {
-            DropDownItemsDisplayValue = "none";
+            _showDropDownItems = false;
         }
     }
 }

@@ -4,7 +4,7 @@
     <div class="siteLayout">
         <div class="technologiesHeader">
             <h2>Tools</h2>
-            <text>@HeaderDescription</text>
+            <text>@_headerDescription</text>
         </div>
 
         <div class="technologyCards">
@@ -14,7 +14,7 @@
                     <div class="hr"></div>
                 </div>
                 <div class="techStackRows">
-                    @foreach (var technology in TechStack)
+                    @foreach (var technology in _techStack)
                     {
                         <div class="techStackRow">
                             <h4>@technology.Name</h4>
@@ -29,7 +29,7 @@
                     <div class="hr"></div>
                 </div>
                 <div class="techStackRows">
-                    @foreach (var technology in OtherTechnologies)
+                    @foreach (var technology in _otherTechnologies)
                     {
                         <div class="techStackRow">
                             <h4>@technology.Name</h4>

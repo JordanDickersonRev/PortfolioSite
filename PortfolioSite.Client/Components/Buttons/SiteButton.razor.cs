@@ -14,7 +14,7 @@ namespace PortfolioSite.Client.Components.Buttons
         public string SiteButtonClass { get; set; } = "siteButton";
 
         [Parameter]
-        public EventCallback OnSiteButtonClicked { get; set; }
+        public EventCallback SiteButtonClicked { get; set; }
 
         [Parameter]
         public bool ShowCaretIcon { get; set; } = false;
@@ -29,6 +29,11 @@ namespace PortfolioSite.Client.Components.Buttons
                 SiteButtonClass = "siteButton2";
             }
             await base.OnInitializedAsync();
+        }
+
+        private async Task OnSiteButtonClicked()
+        {
+            await SiteButtonClicked.InvokeAsync();
         }
     }
 }

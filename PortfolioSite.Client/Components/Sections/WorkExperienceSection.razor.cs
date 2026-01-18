@@ -4,14 +4,14 @@ namespace PortfolioSite.Client.Components.Sections
 {
     public partial class WorkExperienceSection
     {
-        private List<ExperienceDto> WorkExperience = new List<ExperienceDto>();
-        private bool _IsDialogShown { get; set; } = false;
-        private string _DialogTitle { get; set; } = "";
-        private string _DialogDescription { get; set; } = "";
+        private List<ExperienceDto> _workExperience = new List<ExperienceDto>();
+        private bool _isDialogShown = false;
+        private string _dialogTitle = "";
+        private string _dialogDescription = "";
 
         protected override async Task OnInitializedAsync()
         {
-            WorkExperience = await ExperienceAppService.GetWorkExperienceAsync();
+            _workExperience = await ExperienceAppService.GetWorkExperienceAsync();
             await base.OnInitializedAsync();
         }
 
@@ -27,17 +27,16 @@ namespace PortfolioSite.Client.Components.Sections
 
         private void ShowDialog(ExperienceDto job)
         {
-            _DialogTitle = job.CompanyName;
-            _DialogDescription = job.JobDescription;
-            _IsDialogShown = true;
+            _dialogTitle = job.CompanyName;
+            _dialogDescription = job.JobDescription;
+            _isDialogShown = true;
         }
 
-        private Task HideDialog()
+        private void HideDialog()
         {
-            _IsDialogShown = false;
-            _DialogTitle = "";
-            _DialogDescription = "";
-            return Task.CompletedTask;
+            _isDialogShown = false;
+            _dialogTitle = "";
+            _dialogDescription = "";
         }
     }
 }

@@ -8,7 +8,7 @@ namespace PortfolioSite.Client.Components.Layout
         private string _dark = "dark";
         private string _light = "light";
         private string _system = "system";
-        private string _currentThemeIcon { get; set; } = "";
+        private string _currentThemeIcon = "";
         private string _introductionUrl = "#introductionSection";
         private string _aboutMeUrl = "#aboutMeSection";
         private string _technologiesUrl = "#technologiesSection";

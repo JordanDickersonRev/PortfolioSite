@@ -11,7 +11,7 @@
                 <i class="fas fa-desktop" />
             </div>
             <div class="siteCard">
-                <QuickGrid TGridItem="ProjectDto" ItemsProvider="GetProjects" ItemKey="(x => x.Id)" Pagination="Pagination">
+                <QuickGrid TGridItem="ProjectDto" ItemsProvider="GetProjects" ItemKey="(x => x.Id)" Pagination="_pagination">
                     <PropertyColumn Property="@(p => p.Name)" Sortable="false" Class="projectName" />
                     <PropertyColumn Property="@(p => p.ShortDescription)" Sortable="false" Class="projectShortDescription" Title="Short Description" />
                     <TemplateColumn>
@@ -28,16 +28,16 @@
     </div>
 </section>
 
-<SiteDialog @bind-DialogIsShown="_DialogIsShown">
+<SiteDialog @bind-DialogIsShown="_dialogIsShown">
     <DialogHeader>
-        <h5>@_DialogTitle</h5>
+        <h5>@_dialogTitle</h5>
     </DialogHeader>
     <DialogContent>
         <div>
-            <p>@_DialogDescription</p>
+            <p>@_dialogDescription</p>
         </div>
     </DialogContent>
     <DialogFooter>
-        <SiteButton Text="Close" OnSiteButtonClicked="HideDialog" />
+        <SiteButton Text="Close" SiteButtonClicked="HideDialog" />
     </DialogFooter>
 </SiteDialog>

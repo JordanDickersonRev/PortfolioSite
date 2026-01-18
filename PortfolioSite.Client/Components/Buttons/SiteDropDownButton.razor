@@ -1,11 +1,15 @@
 ﻿
-<div class="@DropdownClassName" @onfocusout="HideDropDownItems" tabindex="0">
-    <SiteButton SiteButtonClass="@SiteButtonClassName" OnSiteButtonClicked="DropDownToggleClicked" ShowCaretIcon="@ShowCaretDownIcon" IconClass="@ToggleButtonIconClass" Text="@ToggleButtonText" Disabled="Disabled"/>
-    <div class="dropdownItems" style="display: @DropDownItemsDisplayValue">
-        <ul>
-            @DropDownElements
-        </ul>
-    </div>
+<div class="@_dropdownClassName" @onfocusout="HideDropDownItems" tabindex="0">
+    <SiteButton SiteButtonClass="@_siteButtonClassName" SiteButtonClicked="DropDownToggleClicked" ShowCaretIcon="@ShowCaretDownIcon" IconClass="@ToggleButtonIconClass" Text="@ToggleButtonText" Disabled="@Disabled"/>
+    @if (_showDropDownItems)
+    {
+        <div class="dropdownItems">
+            <ul>
+                @DropDownElements
+            </ul>
+        </div>
+    }
+    
 </div>
 
 

@@ -6,11 +6,11 @@ namespace PortfolioSite.Client.Components.Sections
 {
     public partial class ProjectsSection : IAsyncDisposable
     {
-        private IJSObjectReference? _Module;
-        private PaginationState Pagination = new PaginationState { ItemsPerPage = 5 };
-        private bool _DialogIsShown { get; set; } = false;
-        private string _DialogTitle { get; set; } = "";
-        private string _DialogDescription { get; set; } = "";
+        private IJSObjectReference? _module;
+        private PaginationState _pagination = new PaginationState { ItemsPerPage = 5 };
+        private bool _dialogIsShown = false;
+        private string _dialogTitle = "";
+        private string _dialogDescription = "";
         private async ValueTask<GridItemsProviderResult<ProjectDto>> GetProjects(GridItemsProviderRequest<ProjectDto> request)
         {
             List<ProjectDto> projects = await ProjectAppService.GetProjectsAsync();
@@ -21,27 +21,25 @@ namespace PortfolioSite.Client.Components.Sections
             };
         }
 
-        private Task ShowDialog(ProjectDto project)
+        private void ShowDialog(ProjectDto project)
         {
-            _DialogTitle = project.Name!;
-            _DialogDescription = project.Description!;
-            _DialogIsShown = true;
-            return Task.CompletedTask;
+            _dialogTitle = project.Name!;
+            _dialogDescription = project.Description!;
+            _dialogIsShown = true;
         }
 
-        private Task HideDialog()
+        private void HideDialog()
         {
-            _DialogIsShown = false;
-            return Task.CompletedTask;
+            _dialogIsShown = false;
         }
 
         private async Task<Task> OpenSourceCodeInTab(ProjectDto project)
         {
             if (!string.IsNullOrEmpty(project.Url))
             {
-                _Module = await JS.InvokeAsync<IJSObjectReference>("import",
+                _module = await JS.InvokeAsync<IJSObjectReference>("import",
                     "./Components/Sections/ProjectsSection.razor.js");
-                await _Module.InvokeVoidAsync("openSourceCodeInTab", project.Url);
+                await _module.InvokeVoidAsync("openSourceCodeInTab", project.Url);
             }
 
             return Task.CompletedTask;
@@ -49,11 +47,11 @@ namespace PortfolioSite.Client.Components.Sections
 
         async ValueTask IAsyncDisposable.DisposeAsync()
         {
-            if (_Module is not null)
+            if (_module is not null)
             {
                 try
                 {
-                    await _Module.DisposeAsync();
+                    await _module.DisposeAsync();
                 }
                 catch (JSDisconnectedException)
                 {

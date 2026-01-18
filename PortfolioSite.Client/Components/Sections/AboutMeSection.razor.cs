@@ -4,11 +4,11 @@ namespace PortfolioSite.Client.Components.Sections
 {
     public partial class AboutMeSection
     {
-        private AboutMeDto AboutMe { get; set; } = new AboutMeDto();
+        private AboutMeDto _aboutMe  = new AboutMeDto();
 
         protected override async Task OnInitializedAsync()
         {
-            AboutMe = await AboutAppService.GetAboutMeInformationAsync();
+            _aboutMe = await AboutAppService.GetAboutMeInformationAsync();
             await base.OnInitializedAsync();
         }
     }
