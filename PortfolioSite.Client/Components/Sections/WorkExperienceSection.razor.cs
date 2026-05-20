@@ -7,7 +7,7 @@ namespace PortfolioSite.Client.Components.Sections
         private List<ExperienceDto> _workExperience = new List<ExperienceDto>();
         private bool _isDialogShown = false;
         private string _dialogTitle = "";
-        private string _dialogDescription = "";
+        private List<JobResponsibility> _dialogJobResponsibilities = new List<JobResponsibility>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -28,7 +28,7 @@ namespace PortfolioSite.Client.Components.Sections
         private void ShowDialog(ExperienceDto job)
         {
             _dialogTitle = job.CompanyName;
-            _dialogDescription = job.JobDescription;
+            _dialogJobResponsibilities = job.JobResponsibilities;
             _isDialogShown = true;
         }
 
@@ -36,7 +36,6 @@ namespace PortfolioSite.Client.Components.Sections
         {
             _isDialogShown = false;
             _dialogTitle = "";
-            _dialogDescription = "";
         }
     }
 }

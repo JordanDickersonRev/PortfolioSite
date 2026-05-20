@@ -31,7 +31,10 @@
                 new TechnologyDto(){Name = "React", IconClass = ""},
                 new TechnologyDto(){Name = "JQuery", IconClass = ""},
                 new TechnologyDto(){Name = "XAML", IconClass = ""},
-                new TechnologyDto(){Name = "MAUI", IconClass = ""}
+                new TechnologyDto(){Name = "MAUI", IconClass = ""},
+                new TechnologyDto(){Name = "Typescript", IconClass = ""},
+                new TechnologyDto(){Name = "xUnit", IconClass = ""},
+                new TechnologyDto(){Name = "NSubstitute", IconClass = ""},
             ]);
             return Task.FromResult(result.OrderBy(x => x.Name).ToList());
         }
